@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # GET /about
-  get "professional", to: "professional#index"
-  get "private", to: "private#index"
+  get "resume", to: "resume#index"
+  get "blog", to: "blog#index"
 
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"

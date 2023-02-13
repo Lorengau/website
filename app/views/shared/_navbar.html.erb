@@ -12,16 +12,58 @@
                         <li><a class="dropdown-item" href="#">Contact</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><%= link_to "Welcome", root_path, class: "nav-link" %></li>
-                <li class="nav-item"><%= link_to "Professional", professional_path, class: "nav-link" %></li>
-                <li class="nav-item"><%= link_to "Private", private_path, class: "nav-link" %></li>
-                <li class="nav-item"><a class="nav-link" href="https://github.com/Lorengau" target="blank">Github</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://www.linkedin.com/in/martin-krause-981b7a15b" target="blank">LinkedIn</a></li>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link" href="<%= root_path %>">Welcome</a>
+    </li>
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link" href="<%= resume_path %>">Resume</a>
+    </li>
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link" href="<%= blog_path %>">Blog</a>
+    </li>
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link" href="https://github.com/Lorengau" target="_blank">Github</a>
+    </li>
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link" href="http://www.linkedin.com/in/martin-krause-981b7a15b" target="_blank">LinkedIn</a>
+    </li>
+    <li class="nav-item dropdown d-block d-lg-none">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        About Me
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="<%= root_path %>">Welcome</a>
+        <a class="dropdown-item" href="<%= resume_path %>">Resume</a>
+        <a class="dropdown-item" href="<%= blog_path %>">Blog</a>
+        <a class="dropdown-item" href="https://github.com/Lorengau" target="_blank">Github</a>
+        <a class="dropdown-item" href="http://www.linkedin.com/in/martin-krause-981b7a15b" target="_blank">LinkedIn</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+                    
+                    
+<%
+=begin%>
+ <li class="nav-item"><%= link_to "Welcome", root_path, class: "nav-link" %></li>
+                    <li class="nav-item"><%= link_to "Resume", resume_path, class: "nav-link" %></li>
+                    <li class="nav-item"><%= link_to "Blog", blog_path, class: "nav-link" %></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/Lorengau" target="blank">Github</a></li>
+                    <li class="nav-item"><a class="nav-link" href="http://www.linkedin.com/in/martin-krause-981b7a15b" target="blank">LinkedIn</a></li> 
+<%
+=end%>
+
             </ul>
             <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="list-style: none;">
                     <li class="nav-item"><%= link_to "Sign Up", sign_up_path, class: "nav-link" %></li>
-                    <li><img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="40" alt="Portrait of a Woman" loading="lazy"/></li>
+                    <li><%= image_tag("profile-pic.png", class: "rounded-circle", height: "40", alt: "Profile Picture", loading: "lazy") %></li>
                 </ul>
             </div>
         </div>
