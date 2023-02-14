@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # GET /about
   get "resume", to: "resume#index"
   get "blog", to: "blog#index"
@@ -11,4 +12,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  authenticated :user do
+    root 'main#index', as: :authenticated_root
+  end
+  unauthenticated :user do
+    root 'main#unregistered', as: :unauthenticated_root
+  end
 end

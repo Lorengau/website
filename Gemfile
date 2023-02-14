@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Bestätigungsemail
+gem "devise"
+
 # This is the gem to use scss files
 gem "sassc-rails"
 
